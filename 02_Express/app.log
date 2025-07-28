@@ -1,0 +1,3 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"3.743\"}","timestamp":"2025-07-28T17:29:01.330Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"0.513\"}","timestamp":"2025-07-28T17:29:10.221Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/ice_tea\",\"status\":\"404\",\"responseTime\":\"0.425\"}","timestamp":"2025-07-28T17:29:29.687Z"}

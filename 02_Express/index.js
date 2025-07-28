@@ -1,4 +1,17 @@
+import logger from "./logger.js";
+import morgan from "morgan";
+
+
+
+
+import 'dotenv/config'
+// require('dotenv').config() // Does nowt work 
 import express from 'express'
+
+
+const morganFormat = ":method :url :status :response-time ms";
+
+
 
 // Disclaimer: ' post ' and ' get ' are the thing when you think it from the client side not the server side For My idea but do not say it anywher bcz its the opposite 
 
@@ -7,9 +20,28 @@ import express from 'express'
 
 const app = express()
 
-const port = 5000
+const port = process.env.PORT || 5000
 
 app.use(express.json())
+
+
+app.use(
+    morgan(morganFormat, {
+        stream: {
+            write: (message) => {
+                const logObject = {
+                    method: message.split(" ")[0],
+                    url: message.split(" ")[1],
+                    status: message.split(" ")[2],
+                    responseTime: message.split(" ")[3],
+                };
+                logger.info(JSON.stringify(logObject));
+            },
+        },
+    })
+);
+
+
 
 let teas = []
 let next_Id = 1
